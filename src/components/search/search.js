@@ -7,15 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Search = () => {
-
+const Search = ({ placeholder, onSearch }) => {
   return (
     <View style={styles.containerMain}>
-      <TextInput
-        style={styles.containerInput}
-        placeholder={"Enter a search menu"}
-      />
-      <TouchableOpacity>
+      <TextInput style={styles.containerInput} placeholder={placeholder} />
+      <TouchableOpacity onPress={onSearch}>
         <Image
           style={styles.magnifying}
           source={require("../../../assets/search.png")}
@@ -33,13 +29,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#f2f2f2",
     padding: 6,
-    width: 300,
+    width: "100%",
   },
 
   containerInput: {
     height: 46,
     borderBottomColor: "#665D5C",
     borderBottomWidth: 1,
+    flexGrow: 1,
   },
 
   magnifying: {
