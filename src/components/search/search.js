@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   TextInput,
   View,
   Image,
   TouchableOpacity,
-  Alert,
-  I18nManager,
 } from "react-native";
 
 const Search = () => {
-  I18nManager.forceRTL(false);
-  I18nManager.allowRTL(false);
 
   return (
     <View style={styles.containerMain}>
       <TextInput
         style={styles.containerInput}
-        placeholder="Enter a search term"
+        placeholder={"Enter a search menu"}
       />
       <TouchableOpacity>
         <Image
@@ -41,9 +37,7 @@ const styles = StyleSheet.create({
   },
 
   containerInput: {
-    borderColor: "#000",
     height: 46,
-    width: "90%",
     borderBottomColor: "#665D5C",
     borderBottomWidth: 1,
   },
