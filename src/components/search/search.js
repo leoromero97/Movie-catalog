@@ -6,25 +6,24 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  I18nManager,
 } from "react-native";
 
 const Search = () => {
-  const [text, setText] = useState("");
-  const [inp, setInp] = useState("");
+  I18nManager.forceRTL(false);
+  I18nManager.allowRTL(false);
 
   return (
     <View style={styles.containerMain}>
       <TextInput
         style={styles.containerInput}
         placeholder="Enter a search term"
-        onChange
-        Text={setText}
       />
-      <TouchableOpacity onPress={() => Alert.alert("button false")}>
+      <TouchableOpacity>
         <Image
           style={styles.magnifying}
           source={require("../../../assets/search.png")}
-          accessibilityLabel="Magnifyinh search"
+          accessibilityLabel="Search"
         />
       </TouchableOpacity>
     </View>
@@ -34,22 +33,24 @@ const Search = () => {
 const styles = StyleSheet.create({
   containerMain: {
     flexDirection: "row",
-    borderWidth: 1,
     alignItems: "center",
+    justifyContent: "space-between",
     backgroundColor: "#f2f2f2",
-    padding: 10,
-  },
-
-  containerInput: {
-    backgroundColor: "#f2f2f2",
-    borderColor: "#000",
-    height: 46,
+    padding: 6,
     width: 300,
   },
 
+  containerInput: {
+    borderColor: "#000",
+    height: 46,
+    width: "90%",
+    borderBottomColor: "#665D5C",
+    borderBottomWidth: 1,
+  },
+
   magnifying: {
-    height: 26,
-    width: 26,
+    height: 20,
+    width: 20,
   },
 });
 
