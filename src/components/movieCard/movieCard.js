@@ -3,7 +3,7 @@ import {
   StyleSheet,
   View,
   Image,
-  Text,
+  Text
 } from "react-native";
 
 export default function MovieCard({ poster, title, year, type }) {
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     width: "100%",
+    marginVertical: 10,
   },
 
   movieImgPreview: {
