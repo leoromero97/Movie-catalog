@@ -9,6 +9,8 @@ export default function App() {
     <View style={styles.container}>
       <Search placeholder="Enter search term" onSearch={() => {}} />
       <MovieCard poster={require("./assets/avengersEndgame.jpg")} title="Avengers Endgame" year="2019" type="Movie" />
+      <MovieCard poster={{uri:"https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/53CEBZJICREAZL3DP4A3KYCRBI.jpg"}} title="Avengers Endgame" year="2019" type="Movie" />
+      <MovieCard poster={{uri:"https://i.ebayimg.com/images/g/as0AAOSw4ahbCWgf/s-l400.jpg"}} title="Avengers Endgame" year="2019" type="Movie" />
       <StatusBar style="auto" />
     </View>
   );
