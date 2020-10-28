@@ -11,9 +11,9 @@ export default function MovieCard({ poster, title, year, type }) {
     <View style={styles.containerMovieCard}>
       <Image style={styles.movieImgPreview} source={poster} />
       <View>
-        <Text style={styles.textPreview}>{title}</Text>
-        <Text style={styles.textPreview}>{year}</Text>
-        <Text style={styles.textPreview}>{type}</Text>
+        <Text style={styles.text}>{title}</Text>
+        <Text style={styles.text}>{year}</Text>
+        <Text style={styles.text}>{type}</Text>
       </View>
     </View>
   );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   containerMovieCard: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#f2f2f2",
     borderRadius: 4,
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
 
-  textPreview: {
+  text: {
     fontSize: 14,
-    margin: 2,
+    marginVertical: 4,
   },
 });
