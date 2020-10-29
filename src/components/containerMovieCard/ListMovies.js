@@ -1,8 +1,8 @@
 import React from "react";
 import MovieCard from "../movieCard/movieCard";
-import { Button, ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
-export default function ListMovies({ movies }) {
+export default function ListMovies({ movies, navigation }) {
   return (
     <ScrollView style={styles.containerSroll}>
       {movies.map(({ imdbID, poster, title, year, type }) => {
@@ -13,6 +13,7 @@ export default function ListMovies({ movies }) {
             title={title}
             year={year}
             type={type}
+            navigation={navigation}
           />
         );
       })}
