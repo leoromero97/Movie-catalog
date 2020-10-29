@@ -1,4 +1,5 @@
-import React from "react";
+import * as React from 'react';
+
 import {
   StyleSheet,
   TextInput,
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#fafafa",
     padding: 12,
     width: "100%",
   },
