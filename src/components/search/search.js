@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
   StyleSheet,
@@ -10,8 +10,8 @@ import {
 
 const Search = ({ placeholder, onSearch }) => {
   return (
-    <View style={styles.containerMain}>
-      <TextInput style={styles.containerInput} placeholder={placeholder} />
+    <View style={styles.container}>
+      <TextInput style={styles.input} placeholder={placeholder} />
       <TouchableOpacity onPress={onSearch}>
         <Image
           style={styles.magnifying}
@@ -24,7 +24,7 @@ const Search = ({ placeholder, onSearch }) => {
 };
 
 const styles = StyleSheet.create({
-  containerMain: {
+  container: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 
-  containerInput: {
+  input: {
     height: 46,
     borderBottomColor: "#665D5C",
     borderBottomWidth: 1,

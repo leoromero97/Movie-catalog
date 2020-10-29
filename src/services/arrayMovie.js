@@ -1,5 +1,3 @@
-import { ActionSheetIOS } from "react-native";
-
 const ARRAYMOVIES = [
   {
     poster:

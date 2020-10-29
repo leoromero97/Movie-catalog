@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   containerMovie: {
     flex: 1,
     alignItems: "center",
-    borderWidth: 1,
     backgroundColor: "#f2f2f2",
     padding: 20,
   },

@@ -1,8 +1,10 @@
-import * as React from "react";
+import React from "react";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Search from "./src/components/search/search";
+import SearchMovie from "./src/screens/search/Screensearch";
+import screens from "./src/constants/screens";
+import ScreenMovie from "./src/screens/movie/ScreenMovie";
 
 const Stack = createStackNavigator();
 
@@ -12,20 +14,15 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerTintColor: "#fff",
-          headerStyle: {
-            backgroundColor: "#2196F3",
-          },
+          headerStyle: { backgroundColor: "#2196F3" },
         }}
       >
         <Stack.Screen
-          name="Search Movies"
-          options={{
-            headerTitleStyle: {
-              alignSelf: "center",
-            },
-          }}
-          component={Search}
+          name={screens.search}
+          component={SearchMovie}
+          options={{ headerTitleStyle: { alignSelf: "center" } }}
         />
+        <Stack.Screen name={screens.movie} component={ScreenMovie} />
       </Stack.Navigator>
     </NavigationContainer>
   );

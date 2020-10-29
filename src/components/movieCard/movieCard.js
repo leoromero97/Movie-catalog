@@ -1,21 +1,20 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Image,
-  Text
-} from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import screens from "../../constants/screens";
 
-export default function MovieCard({ poster, title, year, type }) {
+export default function MovieCard({ poster, title, year, type, navigation }) {
   return (
-    <View style={styles.containerMovieCard}>
+    <TouchableOpacity
+      style={styles.containerMovieCard}
+      onPress={() => navigation.navigate(screens.movie)}
+    >
       <Image style={styles.movieImgPreview} source={poster} />
       <View>
         <Text style={styles.text}>{title}</Text>
         <Text style={styles.text}>{year}</Text>
         <Text style={styles.text}>{type}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
