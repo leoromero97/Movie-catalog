@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import SearchMovie from "./src/screens/Screensearch";
-import Movie from "./src/components/movie/movie";
+import Movie from "./src/screens/movie/movie";
 
 const Stack = createStackNavigator();
 
@@ -11,7 +11,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Search Movies"
         screenOptions={{
           headerTintColor: "#fff",
           headerStyle: { backgroundColor: "#2196F3" },
