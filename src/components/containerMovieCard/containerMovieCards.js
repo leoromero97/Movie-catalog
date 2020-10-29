@@ -22,7 +22,7 @@ export default function ListMovies({ movies }) {
 
 const styles = StyleSheet.create({
   containerSroll: {
-    backgroundColor: "#828282",
+    backgroundColor: "#9e9e9e",
     paddingVertical: 20,
     paddingHorizontal: 10,
   },
