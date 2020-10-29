@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet, Image, View, Text } from "react-native";
 
 export default function Movie({
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   containerMovie: {
     flex: 1,
     alignItems: "center",
-    borderWidth: 1,
     backgroundColor: "#f2f2f2",
     padding: 20,
   },
