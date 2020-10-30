@@ -5,14 +5,14 @@ import { ScrollView, StyleSheet } from "react-native";
 export default function ListMovies({ movies, navigation }) {
   return (
     <ScrollView style={styles.containerSroll}>
-      {movies.map(({ imdbID, poster, title, year, type }) => {
+      {movies.map(({ imdbID, Poster, Title, Year, Type }) => {
         return (
           <MovieCard
             key={imdbID}
-            poster={{ uri: poster }}
-            title={title}
-            year={year}
-            type={type}
+            poster={{ uri: Poster }}
+            title={Title}
+            year={Year}
+            type={Type}
             navigation={navigation}
           />
         );

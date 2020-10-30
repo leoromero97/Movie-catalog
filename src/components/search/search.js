@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import {
   StyleSheet,
@@ -9,10 +9,20 @@ import {
 } from "react-native";
 
 const Search = ({ placeholder, onSearch }) => {
+  const [text, setText] = useState("");
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} placeholder={placeholder} />
-      <TouchableOpacity onPress={onSearch}>
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        onChangeText={setText}
+      />
+      <TouchableOpacity
+        onPress={() => {
+          onSearch(text);
+        }}
+      >
         <Image
           style={styles.magnifying}
           source={require("../../../assets/search.png")}
