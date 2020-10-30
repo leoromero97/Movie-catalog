@@ -8,7 +8,7 @@ export default function SearchMovie({ navigation }) {
   return (
     <View style={styles.container}>
       <Search placeholder="Enter a search from" />
-      <ListMovies navigation={navigation} />
+      <ListMovies navigation={navigation} movies={[]} />
     </View>
   );
 }
