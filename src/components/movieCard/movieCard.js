@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2f2f2",
     borderRadius: 4,
     paddingVertical: 10,
-    paddingHorizontal: 20,
     width: "100%",
     marginVertical: 10,
   },
@@ -33,11 +32,12 @@ const styles = StyleSheet.create({
   movieImgPreview: {
     height: 140,
     width: 90,
-    marginHorizontal: 20,
+    marginHorizontal: 14,
   },
 
   text: {
     fontSize: 14,
     marginVertical: 4,
+    width: "86%",
   },
 });

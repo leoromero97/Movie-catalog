@@ -12,7 +12,6 @@ export default function SearchMovie({ navigation }) {
     const movies = getMovies(searchText);
     movies.then((response) => {
       setMovies(response.data.Search);
-      console.log(response.data.Search);
     });
   };
 

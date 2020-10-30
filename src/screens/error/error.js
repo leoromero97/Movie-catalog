@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Error(textError) {
+export default function Error({ textError }) {
   return (
     <View>
       <Text style={styles.text}>{textError}</Text>
@@ -11,7 +11,9 @@ export default function Error(textError) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 14,
-    marginVertical: 4,
+    fontSize: 60,
+    color: "#f2f2f2",
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
