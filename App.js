@@ -9,6 +9,7 @@ import ScreenMovie from "./src/screens/movie/ScreenMovie";
 const Stack = createStackNavigator();
 
 export default function App() {
+  console.log(process.env);
   return (
     <NavigationContainer>
       <Stack.Navigator
