@@ -1,12 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 export default function Error({ textError }) {
-  return (
-    <View>
-      <Text style={styles.text}>{textError}</Text>
-    </View>
-  );
+  return <Text style={styles.text}>{textError}</Text>;
 }
 
 const styles = StyleSheet.create({

@@ -9,7 +9,7 @@ export default function MovieCard({ poster, title, year, type, navigation }) {
       onPress={() => navigation.navigate(screens.movie)}
     >
       <Image style={styles.movieImgPreview} source={poster} />
-      <View>
+      <View style={styles.containerText}>
         <Text style={styles.text}>{title}</Text>
         <Text style={styles.text}>{year}</Text>
         <Text style={styles.text}>{type}</Text>
@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2f2f2",
     borderRadius: 4,
     paddingVertical: 10,
+    paddingLeft: 10,
+    paddingRight: 10,    
     width: "100%",
     marginVertical: 10,
   },
@@ -32,12 +34,15 @@ const styles = StyleSheet.create({
   movieImgPreview: {
     height: 140,
     width: 90,
-    marginHorizontal: 14,
+    marginRight: 16,
+  },
+
+  containerText: {
+    flex: 1,
   },
 
   text: {
     fontSize: 14,
     marginVertical: 4,
-    width: "86%",
   },
 });
