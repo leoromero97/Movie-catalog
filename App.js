@@ -22,7 +22,11 @@ export default function App() {
           component={SearchMovie}
           options={{ headerTitleStyle: { alignSelf: "center" } }}
         />
-        <Stack.Screen name={screens.movie} component={ScreenMovie} />
+        <Stack.Screen
+          name={screens.movie}
+          component={ScreenMovie}
+          options={({route}) =>({title: route.params.title})}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

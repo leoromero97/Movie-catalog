@@ -4,7 +4,7 @@ import Movie from "../../components/movie/movie";
 import { getDetailsMovie } from "../../services/movies";
 
 export default function ScreenMovie({ route }) {
-  const { id } = route.params;
+  const { id, title } = route.params;
 
   const [movieDetail, setMovieDetail] = useState();
 
@@ -17,13 +17,13 @@ export default function ScreenMovie({ route }) {
 
   useEffect(() => {
     detail(id);
-  }, [id]);
-  console.log(movieDetail);
+  }, [id, title]);
 
   return (
     <>
       {movieDetail ? (
         <Movie
+          title={movieDetail.Title}
           poster={{ uri: movieDetail.Poster }}
           navigation={movieDetail.navigation}
           description={movieDetail.Plot}
@@ -36,7 +36,7 @@ export default function ScreenMovie({ route }) {
           meta={movieDetail.Metascore}
         />
       ) : (
-        <Text>Cargando</Text>
+        <Text>Cargando...</Text>
       )}
     </>
   );
