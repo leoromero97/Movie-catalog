@@ -18,6 +18,7 @@ export default function ListMovies({ movies, navigation }) {
               year={Year}
               type={Type}
               navigation={navigation}
+              id={imdbID}
             />
           );
         })

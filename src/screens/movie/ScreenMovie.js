@@ -1,24 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Text } from "react-native";
 import Movie from "../../components/movie/movie";
+import { getDetailsMovie } from "../../services/movies";
 
-export default function ScreenMovie() {
-  {
-    /*const [movieDetail, setMovieDetail] = useState([]);
+export default function ScreenMovie({ route }) {
+  const { id } = route.params;
 
-  const detail = (details) => {
-    const detailMovies = getDetailsMovie(details);
+  const [movieDetail, setMovieDetail] = useState();
+
+  const detail = (movieID) => {
+    const detailMovies = getDetailsMovie(movieID);
     detailMovies.then((res) => {
-      setMovieDetail(res.data.Search);
+      setMovieDetail(res.data);
     });
   };
- */
-  }
+
+  useEffect(() => {
+    detail(id);
+  }, [id]);
+  console.log(movieDetail);
+
   return (
-    <Movie
-      poster={{
-        uri:
-          "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-      }}
-    />
+    <>
+      {movieDetail ? (
+        <Movie
+          poster={{ uri: movieDetail.Poster }}
+          navigation={movieDetail.navigation}
+          description={movieDetail.Plot}
+          genre={movieDetail.Genre}
+          directed={movieDetail.Director}
+          runtime={movieDetail.Runtime}
+          rated={movieDetail.Rated}
+          rating={movieDetail.imdbRating}
+          year={movieDetail.Year}
+          meta={movieDetail.Metascore}
+        />
+      ) : (
+        <Text>Cargando</Text>
+      )}
+    </>
   );
 }

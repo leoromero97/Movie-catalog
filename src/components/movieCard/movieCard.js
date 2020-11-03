@@ -2,11 +2,18 @@ import React from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import screens from "../../constants/screens";
 
-export default function MovieCard({ poster, title, year, type, navigation }) {
+export default function MovieCard({
+  poster,
+  title,
+  year,
+  type,
+  navigation,
+  id,
+}) {
   return (
     <TouchableOpacity
       style={styles.containerMovieCard}
-      onPress={() => navigation.navigate(screens.movie)}
+      onPress={() => navigation.navigate(screens.movie, { id })}
     >
       <Image style={styles.movieImgPreview} source={poster} />
       <View style={styles.containerText}>
@@ -26,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingVertical: 10,
     paddingLeft: 10,
-    paddingRight: 10,    
+    paddingRight: 10,
     width: "100%",
     marginVertical: 10,
   },
