@@ -1,4 +1,4 @@
 export default {
   search: "Search Movies",
-  movie: "Movie"
-}
+  movie: "Movie",
+};
