@@ -27,7 +27,9 @@ export default function ListMovies({ movies, navigation, onNextPage }) {
           renderItem={renderItem}
           keyExtractor={(arrayItem) => arrayItem.imdbID}
           onEndReached={() => {
-            onNextPage(pageNumber);
+            alert("ya casi");
+            /*
+            onNextPage(pageNumber);*/
           }}
           onEndReachedThreshold={0.7}
         />
