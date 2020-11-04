@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { View, StyleSheet } from "react-native";
-import Search from "../../components/search/search";
-import ListMovies from "../../components/containerMovieCard/ListMovies";
+import Search from "./components/search/search";
+import ListMovies from "./components/containerMovieCard/ListMovies";
 import { getMovies } from "../../services/movies";
 
 export default function SearchMovie({ navigation }) {

@@ -25,7 +25,7 @@ const Search = ({ placeholder, onSearch }) => {
       >
         <Image
           style={styles.magnifying}
-          source={require("../../../assets/search.png")}
+          source={require("../../../../../assets/search.png")}
           accessibilityLabel="Search"
         />
       </TouchableOpacity>
