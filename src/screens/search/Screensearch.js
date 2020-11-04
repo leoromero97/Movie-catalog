@@ -8,8 +8,10 @@ import { getMovies } from "../../services/movies";
 export default function SearchMovie({ navigation }) {
   const [movies, setMovies] = useState([]);
 
-  const search = (searchText) => {
-    const movies = getMovies(searchText);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const search = (textMovie) => {
+    const movies = getMovies(textMovie, pageNumber);
     movies.then((response) => {
       setMovies(response.data.Search);
     });
@@ -18,7 +20,7 @@ export default function SearchMovie({ navigation }) {
   return (
     <View style={styles.container}>
       <Search placeholder="Enter a search from" onSearch={search} />
-      <ListMovies navigation={navigation} movies={movies} />
+      <ListMovies navigation={navigation} movies={movies} onNextPage={search}/>
     </View>
   );
 }
