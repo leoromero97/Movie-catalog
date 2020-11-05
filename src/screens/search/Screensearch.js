@@ -17,14 +17,22 @@ export default function SearchMovie({ navigation }) {
     });
   };
 
-  const setPage = () => {
+  const setPage = (textMovie) => {
     setPageNumber(pageNumber + 1);
+    const newMovies = getMovies(textMovie, pageNumber);
+    newMovies.then((res) => {
+      setMovies(res.data.Search);
+    });
   };
 
   return (
     <View style={styles.container}>
       <Search placeholder="Enter a search from" onSearch={search} />
-      <ListMovies navigation={navigation} movies={movies} onNextPage={setPage} />
+      <ListMovies
+        navigation={navigation}
+        movies={movies}
+        onNextPage={setPage}
+      />
     </View>
   );
 }

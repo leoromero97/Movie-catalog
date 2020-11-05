@@ -26,8 +26,8 @@ export default function ListMovies({ movies, navigation, onNextPage }) {
           data={movies}
           renderItem={renderItem}
           keyExtractor={(arrayItem) => arrayItem.imdbID}
-          onEndReached={(pageNumber) => {
-            onNextPage(pageNumber);
+          onEndReached={() => {
+            onNextPage();
           }}
           onEndReachedThreshold={0.7}
         />
