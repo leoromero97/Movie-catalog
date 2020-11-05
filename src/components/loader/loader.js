@@ -23,15 +23,16 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 20,
+    fontWeight: "bold",
     color: "#f2f2f2",
-    margin: 14,
+    marginHorizontal: 14,
   },
 
   circles: {
-    width: 10,
-    height: 10,
+    width: 12,
+    height: 12,
     backgroundColor: "#f2f2f2",
     borderRadius: 50,
-    margin: 10,
+    marginHorizontal: 10,
   },
 });
