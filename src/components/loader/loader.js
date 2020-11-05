@@ -4,7 +4,7 @@ import { StyleSheet, Animated } from "react-native";
 export default function Loader() {
   return (
     <Animated.View style={styles.continerAnimation}>
-      <Animated.Text style={styles.text}>Cargando</Animated.Text>
+      <Animated.Text style={styles.text}>Loading</Animated.Text>
       <Animated.View style={styles.circles}></Animated.View>
       <Animated.View style={styles.circles}></Animated.View>
       <Animated.View style={styles.circles}></Animated.View>
