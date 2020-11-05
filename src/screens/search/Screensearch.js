@@ -24,7 +24,7 @@ export default function SearchMovie({ navigation }) {
   return (
     <View style={styles.container}>
       <Search placeholder="Enter a search from" onSearch={search} />
-      <ListMovies navigation={navigation} movies={movies} onNextPage={search} />
+      <ListMovies navigation={navigation} movies={movies} onNextPage={setPage} />
     </View>
   );
 }
