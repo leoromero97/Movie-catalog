@@ -12,22 +12,18 @@ export default function SearchMovie({ navigation }) {
 
   const [text, setText] = useState();
 
-  const changeText = (textMov) => {
-    setText(textMov);
-  };
-
   const search = () => {
-    const moviesPromise = getMovies(text, pageNumber);
+    setPageNumber(1);
+    const moviesPromise = getMovies(text, 1);
     moviesPromise.then((response) => {
       setMovies(response.data.Search);
     });
   };
 
   const setPage = () => {
-    setPageNumber(pageNumber + 1);
-    /*set page number no se ejecuta rapido, es asincronica. ver FUNCIONES ASINCRONICO, USESTATE*/
-    alert(pageNumber);
-    const newMoviesPromise = getMovies(text, pageNumber);
+    const newPageNumber = pageNumber + 1
+    setPageNumber(newPageNumber);
+    const newMoviesPromise = getMovies(text, newPageNumber);
     newMoviesPromise.then((res) => {
       setMovies(movies.concat(res.data.Search));
     });
@@ -38,7 +34,7 @@ export default function SearchMovie({ navigation }) {
       <Search
         placeholder="Enter a search from"
         onSearch={search}
-        onTextNew={changeText}
+        onTextNew={setText}
       />
       <ListMovies
         navigation={navigation}
