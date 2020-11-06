@@ -8,24 +8,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Search = ({ placeholder, onSearch }) => {
-  const [text, setText] = useState("");
+const Search = ({ placeholder, onSearch, onTextNew }) => {
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-        onChangeText={setText}
+        onChangeText={onTextNew}
       />
       <TouchableOpacity
         onPress={() => {
-          onSearch(text);
+          onSearch();
         }}
       >
         <Image
           style={styles.magnifying}
-          source={require("../../../assets/search.png")}
+          source={require("../../../../../assets/search.png")}
           accessibilityLabel="Search"
         />
       </TouchableOpacity>
