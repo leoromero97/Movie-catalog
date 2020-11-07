@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Text } from "react-native";
 import Movie from "./components/movie/movie";
 import { getDetailsMovie } from "../../services/movies";
+import Loader from "../../components/loader/loader";
 
 export default function ScreenMovie({ route }) {
   const { id, title } = route.params;
@@ -36,7 +36,7 @@ export default function ScreenMovie({ route }) {
           meta={movieDetail.Metascore}
         />
       ) : (
-        <Text>Cargando...</Text>
+        <Loader />
       )}
     </>
   );
